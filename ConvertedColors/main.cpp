@@ -13,6 +13,8 @@ int main() {
 	bool isHex = (hexInput != 0);
 	bool isHexEnaled = isHex ? true : false;
 
+	bool isHexDisabled = !isHexEnaled;
+
 	while (isHexEnaled) {
 
 		if (isHexEnaled) {
@@ -24,10 +26,31 @@ int main() {
 			cout << "Hex " << hexString << endl;
 			cout << "Decinal: " << hexInput << endl;
 
+			ofstream file("info.converted");
+
+			if (file.is_open()) {
+
+				file << hexInput;
+				file.close();
+			}
+
 			isHexEnaled = !true;
 		}
 		
-		isHexEnaled = !true;
+		if (isHexDisabled) {
+
+			ofstream file("info.converted");
+
+			if (file.is_open()) {
+
+				file << hexInput;
+				file.close();
+			}
+
+			isHexEnaled = !true;
+			break;
+
+		}
 	}
 
 	system("pause > 0");
