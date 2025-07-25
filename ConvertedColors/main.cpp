@@ -24,10 +24,10 @@ int main() {
 			cout << "Hex " << hexString << endl;
 			cout << "Decinal: " << hexInput << endl;
 
-			isHexEnaled = !isHexEnaled;
+			isHexEnaled = !true;
 		}
 		
-		isHexEnaled = !isHexEnaled;
+		isHexEnaled = !true;
 	}
 
 	system("pause > 0");
